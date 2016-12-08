@@ -1,0 +1,93 @@
+$blue : #2980b9;
+$softblue :#3498db;
+$green: #2ecc71;
+$purple : #9b59b6;
+$weird : #34495e;
+$colors-list: #FCFFF5 #3E606B #ABB29B #FFFFFF #ABB29C #3E606F #3E606C #ABB29A #FCFFF4 #FCFFF7;
+h1{
+  padding-top:10%;
+  text-align:center;
+  font-family: 'Nova Script', cursive;
+  font-size:40px;
+  color:#ecf0f1;
+  letter-spacing:4px;
+}
+body{
+  background:$weird;
+}
+ .title{
+    overflow: hidden;
+   margin:0 auto;
+   // background:red;
+   width: 50%;
+  }
+.under{
+  margin: 0 auto;
+  opacity:0;
+  width: 50%;
+  height: 3px;
+  background:#ecf0f1;
+  // transition: all 2s ease-in-out;
+  animation: loading 1.3s linear 2s infinite;
+}
+.under1{
+  // opacity:0;
+  margin: 0 auto;
+  width: 50%;
+  height: 3px;
+  background:#ecf0f1;
+  // transition: all 2s ease-in-out;
+  animation: loading 1.3s linear 1s infinite;
+}
+.main{
+   columns: 0px 3;
+  
+  top:50%; left:50%; transform : translate(-50%, -50%);
+  position:absolute;
+  // width: 40%;
+  margin-top: 150px;
+  
+}
+
+.block10{
+column-span: all; 
+width: 0% !important;
+ display:none;
+}
+
+
+
+
+@each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+    .block#{$i} { 
+     
+       background: $current-color;
+       height:100px;
+       width: 100px;
+       border-radius:8px;
+    }
+}
+
+
+@keyframes loading{
+  0%,100%{
+    transform:translate(-600px);
+     opacity:0;
+  }
+  22%{
+     opacity:1;
+  }
+    50%{
+    opacity:0;
+    transform:translate(600px);
+  }
+}
+@keyframes build {
+  0%,100%{
+    
+  }
+  50%{
+    
+  }
+}
